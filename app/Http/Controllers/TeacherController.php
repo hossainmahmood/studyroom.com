@@ -82,7 +82,6 @@ class TeacherController extends Controller
     public function edit($id)
     {
         $teachers = Teacher::where('id',$id)->first();
-        //return response()->view('admin.teachers.edit',compact('teachers'));
         return response()->json(["teacher"=>$teachers]);
     }
 
@@ -112,6 +111,5 @@ class TeacherController extends Controller
         $teacher = Teacher::where('id',$id)->first();
         $teacher->delete();
         return redirect()->action([TeacherController::class,'index']);
-      //exit($id."Deleted Suc");
     }
 }

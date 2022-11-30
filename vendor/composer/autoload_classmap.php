@@ -46,6 +46,7 @@ return array(
     'App\\Models\\Teacher' => $baseDir . '/app/Models/Teacher.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Models\\YoutubeVideos' => $baseDir . '/app/Models/YoutubeVideos.php',
+    'App\\Models\\lession' => $baseDir . '/app/Models/lession.php',
     'App\\Models\\role' => $baseDir . '/app/Models/role.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',

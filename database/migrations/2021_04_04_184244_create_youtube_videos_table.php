@@ -19,7 +19,7 @@ class CreateYoutubeVideosTable extends Migration
             $table->string('course_id');
             $table->string('lect_no');
             $table->string('lect_no_');
-            $table->string('tacher_id');
+            $table->string('teacher_id');
             $table->string('target_learner');
             $table->string('lesson_title');
             $table->string('lesson_detail');

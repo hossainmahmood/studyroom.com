@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light bg-light">
+<nav class="navbar navbar-expand-md navbar-light bg-gray">
     <div class="shrink-0 flex items-center">
         <a href="{{ route('dashboard') }}">
             <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
@@ -12,7 +12,6 @@
         </x-nav-link>
     </div>
 
-    <!--a class="navbar-brand" href="#">StudyRommBd</a-->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -46,11 +45,11 @@
             <!-- Dropdown -->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                    Course Categories
+                    Courses
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Academic</a>
-                    <a class="dropdown-item" href="#">Career Development</a>
+                    <a class="dropdown-item" href="{{ url('/courses') }}">All Course</a>
+                    <a class="dropdown-item" href="{{ url('/courses/create') }}">Add New Course</a>                    
                 </div>
             </li>
 
@@ -118,4 +117,5 @@
             </div>
         </div>
     </div>
-</nav>
+</nav> 
+<hr style="width:100%; border-top: 1px solid rgb(107, 8, 8); margin-top:-5px;">

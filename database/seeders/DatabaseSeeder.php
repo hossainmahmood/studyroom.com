@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
         DB::table('roles')->insert(['id'=>'2','name' => 'user', 'display_name' => 'User',]);
         DB::table('users')->insert(['role_id'=>'1','name' => 'Admin', 'email' => 'admin@admin.com','password' => Hash::make('admin'),]);
         DB::table('users')->insert(['role_id'=>'2','name' => 'User', 'email' => 'user@user.com','password' => Hash::make('user'),]);
- 
+        DB::table('categories')->insert(['cat_name'=>'Academic','cat_details' => 'Academic Course', 'parent_id' => '0',]);
+        DB::table('categories')->insert(['cat_name'=>'Professional','cat_details' => 'Professional Course', 'parent_id' => '0',]);
+
     }
 }

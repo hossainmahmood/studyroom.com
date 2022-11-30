@@ -602,6 +602,7 @@ class ComposerStaticInit0d77d6549d1d74768763e0e24011b849
         'App\\Models\\Teacher' => __DIR__ . '/../..' . '/app/Models/Teacher.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Models\\YoutubeVideos' => __DIR__ . '/../..' . '/app/Models/YoutubeVideos.php',
+        'App\\Models\\lession' => __DIR__ . '/../..' . '/app/Models/lession.php',
         'App\\Models\\role' => __DIR__ . '/../..' . '/app/Models/role.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

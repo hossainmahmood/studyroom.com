@@ -23,8 +23,9 @@ Route::get('/admin', function () {
 });
 
 Route::resource('teachers',TeacherController::class)->middleware(['auth']);
-Route::resource('students',StudentController::class);
-Route::resource('videos', VideoController::class);
+Route::resource('students',StudentController::class)->middleware(['auth']);;
+Route::resource('videos', VideoController::class)->middleware(['auth']);;
+Route::resource('courses', CourseController::class)->middleware(['auth']);;
 
 
 Route::get('/dashboard', function () {

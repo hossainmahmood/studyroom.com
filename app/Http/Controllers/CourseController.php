@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\Category;
+use App\Models\Teacher;
 use Illuminate\Http\Request;
+
 
 class CourseController extends Controller
 {
@@ -14,7 +17,9 @@ class CourseController extends Controller
      */
     public function index()
     {
-        //
+        $courses = Course::all();
+        //print($teachers);
+        return response()->view('admin.courses.index',compact('courses'));
     }
 
     /**
@@ -24,7 +29,8 @@ class CourseController extends Controller
      */
     public function create()
     {
-        //
+        $data = Category::All('id','cat_name');
+       return view('admin.courses.create',compact('data'));
     }
 
     /**
@@ -35,7 +41,14 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       //dd($request->durationslot);
+        $course = new Course();
+        $course->course_name = $request->coursename;
+        $course->category = $request->category;
+        $course->duration = $request->duration ." ". $request->durationslot;
+        $course->startdate = $request->startdate;
+        $course->saveOrFail();
+        return redirect()->action([CourseController::class,'index']);
     }
 
     /**
@@ -44,9 +57,10 @@ class CourseController extends Controller
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function show(Course $course)
+    public function show($id)
     {
-        //
+        $course = Course::where('id',$id)->first();
+        return $course;
     }
 
     /**
@@ -55,9 +69,10 @@ class CourseController extends Controller
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function edit(Course $course)
+    public function edit($id)
     {
-        //
+        $course = Course::where('id',$id)->first();
+        return response()->json(["course"=>$course]);
     }
 
     /**
@@ -67,9 +82,13 @@ class CourseController extends Controller
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Course $course)
+    public function update(Request $request, $id)
     {
-        //
+        $course = Course::where('id',$id)->first();
+        $course->fill($request->input());
+        $course->saveOrFail();
+        return redirect()->action([CourseController::class,'index']);
+
     }
 
     /**
@@ -78,8 +97,10 @@ class CourseController extends Controller
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Course $course)
+    public function destroy($id)
     {
-        //
+        $course = Course::where('id',$id)->first();
+        $course->delete();
+        return redirect()->action([CourseController::class,'index']);
     }
 }

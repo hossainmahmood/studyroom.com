@@ -15,8 +15,7 @@ class VideoController extends Controller
      */
     public function index()
     {
-    	return  "I am from video Controller";
-        //return view('videos.youtubevideos');
+        return view('videos.youtubevideos');
     }
 
     /**
