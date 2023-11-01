@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\YoutubeVideos;
+use App\Models\Video;
 use App\Models\Teacher;
 
 class VideoController extends Controller
@@ -37,10 +37,12 @@ class VideoController extends Controller
      */
     public function store(Request $request)
     {
-        $youtubeVideo = new YoutubeVideos();
-        $youtubeVideo->lesson_title = $request->videoTitle;   
-        $youtubeVideo->youtube_link = $request->videoLink;
-        $youtubeVideo->save();
+        $video = new Video();
+        $video->course_id = $request->courseid;   
+        $video->lesson_id = $request->lessonid;
+        $video->video_link = $request->videolink;
+        $video->video_details = $request->videodetails;
+        $video->save();
         return redirect()->action([TeacherController::class,'index']);
     }
 
