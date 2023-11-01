@@ -7,6 +7,8 @@
         }
     </style>
     <div class="container-fluid">
+
+    <div>Search</div>
         <table class="table table-striped table-hover table-sm">
             <thead class="thead-light">
                 <tr>
